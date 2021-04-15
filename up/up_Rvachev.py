@@ -95,7 +95,7 @@ up = np.zeros(w)
 for i in range(w):
     x = -1+i*2/(w-1)
     up[i] = fun_up(x, b)
-    print((i+1)/w)
+    #print((i+1)/w)
 # график
 fig = plt.subplots()
 x = np.linspace(-1, 1, len(up))

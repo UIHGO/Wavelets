@@ -10,7 +10,7 @@ for i in range(1, n+1):
     for j in range(len(up1)):
         up2[j] = up1[j]
         up2[len(up1)+j] = -up1[j]
-    up3 = np.zeros(2 * len(up1))
+    up3 = np.zeros(2*len(up1))
     up3[0] = up2[0]
     for j in range(len(up2)-1):
         up3[j+1] = up3[j]+up2[j+1]
