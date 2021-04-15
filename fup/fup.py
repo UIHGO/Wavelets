@@ -52,12 +52,10 @@ for i in range(len(fup3)):
     fup[i] = fup[i]/s
 s=0
 
-
 my_file = open("data.txt", "w")
 
 for i in range(len(fup)):
     my_file.write(str(fup[i])+', ')
-
 
 # график
 fig = plt.subplots()
