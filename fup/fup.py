@@ -2,7 +2,6 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 
-
 def fact(h):
     fact = 1
     while h > 0:
@@ -42,7 +41,7 @@ fup = np.zeros(len(fup3))
 
 for i in range(len(fup3)-n-m-1):
     fup[i+math.ceil((n+m+1)/2)] = fup3[i]
-
+#нормировка
 s = 0
 for i in range(len(fup)-1):
     s = s+fup[i]+fup[i+1]
@@ -50,10 +49,9 @@ s = s*(m+2)/(len(fup3)-1)/2
 
 for i in range(len(fup3)):
     fup[i] = fup[i]/s
-s=0
-
+s = 0
+#запись в файл
 my_file = open("data.txt", "w")
-
 for i in range(len(fup)):
     my_file.write(str(fup[i])+', ')
 
