@@ -1,8 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# число "UP-ов"
+k = 10
 # число точек
-n = 30
+n = 31
 k_max = 10
 r_max = 10
 s_max = 10
@@ -31,8 +33,19 @@ for i in range(n):
     x = -1/(a-1)+i*2/(n-1)/(a-1)
     up[i] = fun_up(x)
     print((i+1)/n)
+#разложение
+up_1 = np.zeros((k+1)*int(len(up)/2))
+for j in range(k):
+    for i in range(len(up)):
+        s = i+int(len(up)/2)*j
+        up_1[s] = up_1[s]+up[i]
+# погрешность
+p = 0
+for i in range(int(len(up)/2), int(len(up_1)-len(up)/2)):
+    p = p+(up_1[i]-1)**2
+print(p)
 #график
 fig = plt.subplots()
-x = np.linspace(-1/(a-1), 1/(a-1), len(up))
-plt.plot(x, up)
+x = np.linspace(-(k-1)/2-1, (k-1)/2+1, len(up_1))
+plt.plot(x, up_1)
 plt.show()

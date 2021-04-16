@@ -2,10 +2,12 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 
+# число "UP-ов"
+k = 11
 # порядок функции h_a(x)
 a = 3
 # число итераций (желательно четное)
-n = 10
+n = 11
 h1 = np.zeros(1)
 h3 = np.zeros(math.ceil(a * len(h1)))
 h1[0] = 1
@@ -30,9 +32,18 @@ for i in range(len(h3)-n):
 
 for i in range(len(h3)):
     my_file.write(str(h[i])+', ')
-
+#разложение
+up_1 = np.zeros((k+1)*int(len(h)/2))
+for j in range(k):
+    for i in range(len(h)):
+        s = i+int(len(h)/2)*j
+        up_1[s] = up_1[s]+h[i]
+# погрешность
+p = 0
+for i in range(int(len(h)/2), int(len(up_1)-len(h)/2)):
+    p = p+(up_1[i]-1)**2
 #график
 fig = plt.subplots()
-x = np.linspace(-1/(a-1), 1/(a-1), len(h))
+x = np.linspace(-(k-1)/2-1, (k-1)/2+1, len(up_1))
 plt.plot(x, h)
 plt.show()
