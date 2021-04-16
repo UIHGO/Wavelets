@@ -97,8 +97,9 @@ for i in range(w):
     x = -1+i*2/(w-1)
     up[i] = fun_up(x, b)
     #print((i+1)/w)
-# график
-fig = plt.subplots()
-x = np.linspace(-1, 1, len(up))
-plt.plot(x, up)
-plt.show()
+#площадь
+s = 0
+for i in range(w-1):
+    s = s + up[i]+up[i+1]
+s = s/(w-1)
+print(s)

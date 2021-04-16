@@ -2,8 +2,10 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 
-# число точек
-w = 30
+# число "UP-ов"
+k = 11
+# число точек (обязательно нечетное)
+w = 31
 #степень
 n = 10
 
@@ -97,8 +99,18 @@ for i in range(w):
     x = -1+i*2/(w-1)
     up[i] = fun_up(x, b)
     #print((i+1)/w)
+up_1 = np.zeros((k+1)*int(len(up)/2)+1)
+for j in range(k):
+    for i in range(len(up)):
+        s = i+int(len(up)/2)*j
+        up_1[s] = up_1[s]+up[i]
+# погрешность
+p = 0
+for i in range(int(len(up)/2), int(len(up_1)-len(up)/2)):
+    p = p+(up_1[i]-1)**2
+print(p)
 # график
 fig = plt.subplots()
-x = np.linspace(-1, 1, len(up))
-plt.plot(x, up)
+x = np.linspace(-(k-1)/2-1, (k-1)/2+1, len(up_1))
+plt.plot(x, up_1)
 plt.show()
