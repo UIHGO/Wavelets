@@ -32,7 +32,7 @@ def fun_up(x):
 for i in range(n):
     x = -1+i*2/(n-1)
     up[i] = fun_up(x)
-    print((i+1)/n)
+    #print((i+1)/n)
 #разложение
 up_1 = np.zeros((k+1)*int(len(up)/2)+1)
 for j in range(k):

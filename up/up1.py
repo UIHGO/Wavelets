@@ -37,7 +37,7 @@ for j in range(k):
 # погрешность
 p = 0
 for i in range(int(len(up)/2), int(len(up_1)-len(up)/2)):
-    p = p+abs(up_1[i]-1)
+    p = p+(up_1[i]-1)**2
 print(p)
 # график
 fig = plt.subplots()

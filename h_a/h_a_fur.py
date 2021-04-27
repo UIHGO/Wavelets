@@ -20,7 +20,7 @@ def fun_up(x):
     for k in range(1, k_max+1):
         psin = 1
         for r in range(1, r_max+1):
-            t = np.pi*k * (a-1) / a**r
+            t = np.pi*k*(a-1)/a**r
             psin = psin*my_sinc(t)
         psin = psin*np.cos(np.pi*k*x*(a-1))
         y = y+psin

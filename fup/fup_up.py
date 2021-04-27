@@ -13,7 +13,7 @@ def fun_up(x):
     y = 1/2
     for k in range(1, k_max+1):
         psin = 1
-        t = np.pi*k /2
+        t = np.pi*k/2
         for r in range(1, r_max+1):
             t = t/2
             psin = psin*np.cos(t)**r

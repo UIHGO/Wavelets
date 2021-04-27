@@ -3,7 +3,7 @@ import math
 import matplotlib.pyplot as plt
 
 # число точек
-w = 30
+w = 200
 #степень
 n = 10
 
@@ -70,7 +70,7 @@ def init_b(n, a):
             bbb = binomials[2*j]
             bbb = bbb*a[2*j]
             bb = bb+bbb
-        bbb = i * 2**(2*i+1)
+        bbb = i*2**(2*i+1)
         bb = bb / bbb
         b[2*i-1] = bb
     for i in range(n):

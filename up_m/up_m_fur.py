@@ -30,7 +30,7 @@ def fun_up(x):
 for i in range(n):
     x = -1+i*2/(n-1)
     up[i] = fun_up(x)
-    print((i+1)/n)
+    #print((i+1)/n)
 
 # график
 fig = plt.subplots()

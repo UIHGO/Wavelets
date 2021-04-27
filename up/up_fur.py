@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # число точек
-n = 30
+n = 100
 k_max = 150
 m_max = 150
 up = np.zeros(n)
