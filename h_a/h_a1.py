@@ -33,7 +33,7 @@ for i in range(len(h3)-n):
 for i in range(len(h3)):
     my_file.write(str(h[i])+', ')
 #разложение
-up_1 = np.zeros((k+1)*int(len(h)/2))
+up_1 = np.zeros((k+1)*int(len(h)/2+1))
 for j in range(k):
     for i in range(len(h)):
         s = i+int(len(h)/2)*j

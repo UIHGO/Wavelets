@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # число "UP-ов"
-k = 10
+k = 9
 # число точек
 n = 31
 k_max = 10
@@ -34,7 +34,7 @@ for i in range(n):
     up[i] = fun_up(x)
     print((i+1)/n)
 #разложение
-up_1 = np.zeros((k+1)*int(len(up)/2))
+up_1 = np.zeros((k+1)*int(len(up)/2+1))
 for j in range(k):
     for i in range(len(up)):
         s = i+int(len(up)/2)*j
@@ -46,6 +46,6 @@ for i in range(int(len(up)/2), int(len(up_1)-len(up)/2)):
 print(p)
 #график
 fig = plt.subplots()
-x = np.linspace(-(k-1)/2-1, (k-1)/2+1, len(up_1))
+x = np.linspace(-(k-1)/2, (k-1)/2, len(up_1))
 plt.plot(x, up_1)
 plt.show()
